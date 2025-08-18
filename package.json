@@ -1,0 +1,27 @@
+{
+  "name": "sport-blog-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch --env-file=.env server.js",
+    "start": "node --env-file=.env server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SergiiBzn/sport-blog-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SergiiBzn/sport-blog-backend/issues"
+  },
+  "homepage": "https://github.com/SergiiBzn/sport-blog-backend#readme",
+  "type": "module",
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
+  }
+}
