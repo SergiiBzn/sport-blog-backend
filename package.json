@@ -20,8 +20,10 @@
   "homepage": "https://github.com/SergiiBzn/sport-blog-backend#readme",
   "type": "module",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
-    "pg": "^8.16.3"
+    "pg": "^8.16.3",
+    "sequelize": "^6.37.7"
   }
 }
