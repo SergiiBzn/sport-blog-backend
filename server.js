@@ -9,7 +9,7 @@ const sequelize = new Sequelize(process.env.PG_URI);
 
 app.use(express.json(), cors());
 
-const Post = sequelize.define("post", {
+const Post = sequelize.define("posts", {
   author: {
     type: DataTypes.STRING,
   },
