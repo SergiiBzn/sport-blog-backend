@@ -24,12 +24,7 @@ const Post = sequelize.define('posts', {
   cover: {
     type: DataTypes.TEXT,
     allowNull: false,
-  },
-  date: {
-    type: DataTypes.DATE,
-    allowNull: false,
-    defaultValue: DataTypes.NOW,
-  },
+  }
 });
 
 await sequelize.authenticate();
@@ -43,7 +38,6 @@ app.post('/posts', async (req, res) => {
       title,
       content,
       cover,
-      date,
     });
     res.status(201).json({ data: post });
   } catch (error) {
@@ -54,7 +48,7 @@ app.post('/posts', async (req, res) => {
 
 app.get('/posts', async (req, res) => {
   try {
-    const posts = await Post.findAll({ order: [['date', 'DESC']] });
+    const posts = await Post.findAll();
     res.json({ data: posts });
   } catch (error) {
     console.log(error);
@@ -79,10 +73,10 @@ app.get('/posts/:id', async (req, res) => {
 
 app.put('/posts/:id', async (req, res) => {
   const { id } = req.params;
-  const { author, title, content, cover, date } = req.body;
+  const { author, title, content, cover } = req.body;
   try {
     const [rowCount, rows] = await Post.update(
-      { author, title, content, cover, date },
+      { author, title, content, cover },
       { where: { id }, returning: true }
     );
     if (rowCount !== 1) {
